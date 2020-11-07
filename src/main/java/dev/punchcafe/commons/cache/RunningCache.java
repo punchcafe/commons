@@ -48,11 +48,13 @@ public class RunningCache<ID, T> {
         }
         return initialResult.getElement();
     }
-
+/*
 
     public void start() {
         updateThread.execute(this::runUpdate, this.updateInterval);
     }
+
+ */
 
     private void runUpdate() {
         final var updatedEntries = batchUpdateFunction.apply(this.cacheEntryMap.keySet());
