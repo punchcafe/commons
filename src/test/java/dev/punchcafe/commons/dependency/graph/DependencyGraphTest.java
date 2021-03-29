@@ -2,6 +2,7 @@ package dev.punchcafe.commons.dependency.graph;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.InputStream;
 import java.util.Collection;
 import java.util.List;
 import java.util.function.Function;
