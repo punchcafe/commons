@@ -1,7 +1,10 @@
 package dev.punchcafe.commons.cache;
 
+import jdk.jfr.Experimental;
+
 import java.time.LocalDateTime;
 
+@Experimental
 class CacheEntry<T> {
     private LocalDateTime creationTime;
     private LocalDateTime lastAccessedTime;

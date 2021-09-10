@@ -1,13 +1,13 @@
 package dev.punchcafe.commons.cache;
 
+import jdk.jfr.Experimental;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.function.Function;
 
 /**
@@ -15,6 +15,7 @@ import java.util.function.Function;
  * @param <ID>
  * @param <T>
  */
+@Experimental
 public class RunningCache<ID, T> {
 
     private Map<ID, CacheEntry<T>> cacheEntryMap;

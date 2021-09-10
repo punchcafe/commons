@@ -1,13 +1,16 @@
 package dev.punchcafe.commons.dependency.graph;
 
+import jdk.jfr.Experimental;
+
 import java.util.Collection;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
 import static java.util.function.Function.identity;
-import static java.util.stream.Collectors.*;
+import static java.util.stream.Collectors.toConcurrentMap;
+import static java.util.stream.Collectors.toUnmodifiableMap;
 
+@Experimental
 public class DependencyGraph<T> {
 
     private final Map<T, Vertex<T>> vertexMap;

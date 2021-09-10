@@ -1,5 +1,8 @@
 package dev.punchcafe.commons.dependency.graph;
 
+import jdk.jfr.Experimental;
+
+@Experimental
 public class Edge<T> {
 
     public static <T> void createBetween(final Vertex<T> dependant, final Vertex<T> dependee){

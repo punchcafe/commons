@@ -1,10 +1,13 @@
 package dev.punchcafe.commons.dependency.graph;
 
+import jdk.jfr.Experimental;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
+@Experimental
 public class Vertex<T> {
 
     private final T element;
