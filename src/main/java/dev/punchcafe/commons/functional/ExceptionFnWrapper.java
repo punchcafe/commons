@@ -1,5 +1,6 @@
 package dev.punchcafe.commons.functional;
 
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class ExceptionFnWrapper {
@@ -17,6 +18,16 @@ public class ExceptionFnWrapper {
         return (T obj) -> {
             try {
                 return fn.invokeThrowingFn(obj);
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        };
+    }
+
+    public static <T> Consumer<T> wrapEx(final ExceptionThrowingVoidFn<T> fn) {
+        return (T obj) -> {
+            try {
+                fn.invokeThrowingFn(obj);
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
