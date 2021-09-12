@@ -2,6 +2,7 @@ package dev.punchcafe.commons.functional;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class ExceptionFnWrapper {
 
@@ -28,6 +29,16 @@ public class ExceptionFnWrapper {
         return (T obj) -> {
             try {
                 fn.invokeThrowingFn(obj);
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        };
+    }
+
+    public static <T> Predicate<T> wrapEx(final ExceptionThrowingPredicateFn<T> fn) {
+        return (T obj) -> {
+            try {
+                return fn.invokeThrowingFn(obj);
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
